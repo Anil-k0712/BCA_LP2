@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+class Test {
+    private:
+        int x;
+        int y;
+        int z;
+    public:
+        Test() {
+            x = 0;
+            y = 0;
+            z = 0;
+        }
+
+    void get_data(int arg1) {
+        x = arg1;
+    }
+
+    void get_data(int arg1, int arg2) {
+        x = arg1;
+        y = arg2;
+    }
+
+    void get_data(int arg1, int arg2, int arg3) {
+        x = arg1;
+        y = arg2;
+        z = arg3;
+    }
+
+    void show_data() {
+        cout <<"x: " <<x <<endl;
+        cout <<"y: " <<y <<endl;
+        cout <<"z: " <<z <<endl;
+    }
+};
+
+int main() {
+    Test t1,t2,t3;
+
+    t1.get_data(10);
+    t2.get_data(20, 30);
+    t3.get_data(40, 50, 60);
+
+    cout << "Object 1:" << endl;
+    t1.show_data();
+    cout << "Object 2:" << endl;
+    t2.show_data();
+    cout << "Object 3:" << endl;
+    t3.show_data();
+
+    return 0;
+}
