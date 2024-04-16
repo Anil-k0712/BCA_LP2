@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+class BCA_OOPS {
+private:
+    int x;
+    int y;
+
+public:
+    // Default constructor
+    BCA_OOPS() {
+        x = 0;
+        y = 0;
+    }
+
+    // Parameterized constructor
+    BCA_OOPS(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
+
+    // Display function
+    void display() {
+        std::cout << "x: " <<x << ", y: " << y << std::endl;
+    }
+
+    // Copy function
+    void copy(const BCA_OOPS& obj) {
+        x = obj.x;
+        y = obj.y;
+    }
+
+    // Decrement function
+    void decrement() {
+        if (x >= 0 && x <= 10)
+            x -= 2;
+        else if (x > 10)
+            x -= 5;
+
+        if (y >= 0 && y <= 10)
+            y -= 2;
+        else if (y > 10)
+            y -= 5;
+    }
+};
+
+int main() {
+    // Initializing through default constructor
+    BCA_OOPS b1;
+    b1.display();
+
+    // Initializing through parameterized constructor
+    BCA_OOPS b2(15, 8);
+    b2.display();
+
+    // Copying data from obj2 to obj1
+    b1.copy(b2);
+    std::cout << "After copying data from obj2 to obj1:\n";
+    b1.display();
+
+    // Decrementing values
+    b1.decrement();
+    std::cout << "After decrementing values:\n";
+    b1.display();
+
+    return 0;
+}
