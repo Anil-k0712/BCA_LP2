@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+protected:
+    string Name;
+    int Age;
+    string City;
+    int academic_fee;
+public:
+    void get() {
+        cout<< "Enter name: ";
+        cin>> Name;
+        cout<< "Enter age: ";
+        cin>> Age;
+        cout<< "Enter city: ";
+        cin>> City;
+        cout<< "Enter academic fee: ";
+        cin>> academic_fee;
+    }
+    void display() {
+        cout << "Name: " << Name << endl;
+        cout << "Age: " << Age << endl;
+        cout << "City: " << City << endl;
+        cout << "Academic Fee: " << academic_fee << endl;
+    }
+};
+
+class Transport : public Student {
+private:
+    int route;
+    int bus_fee;
+public:
+    Transport() {}
+    void show() {
+        get(); 
+        cout<< "Enter route: ";
+        cin>> route;
+        cout<< "Enter bus fee: ";
+        cin>> bus_fee;
+        display(); 
+        cout<< "Route: " << route << endl;
+        cout<< "Bus Fee: " << bus_fee << endl;
+    }
+};
+
+int main() {
+    Transport student_transport;
+    student_transport.show();
+    return 0;
+}
